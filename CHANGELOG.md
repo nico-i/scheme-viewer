@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/nico-i/scheme-viewer/compare/v1.1.0...v1.1.1) (2024-07-29)
+
+
+### Bug Fixes
+
+* removed `scheme-viewer` from paths ([6fb4221](https://github.com/nico-i/scheme-viewer/commit/6fb42210c0fbb47b2eaf2b1034537b01700d5ff5))
+
 ## [1.1.0](https://github.com/nico-i/scheme-viewer/compare/v1.0.0...v1.1.0) (2024-07-29)
 
 
