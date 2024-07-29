@@ -5,7 +5,7 @@ const bases = await new GithubBaseRepo(
   import.meta.env.USE_CACHE || false,
   import.meta.env.UPDATE_CACHE || false
 ).getAllBases();
-const mainBasePath = `scheme-viewer/${bases[0].name}`;
+const mainBasePath = `/${bases[0].name}`;
 ---
 
 <html>

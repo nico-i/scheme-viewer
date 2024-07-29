@@ -31,7 +31,7 @@ const schemes = await schemeRepo.getSchemesByBase(base);
   title={baseName}
   pages={bases.map((base) => ({
     title: `${base.name} schemes`,
-    route: `scheme-viewer/${base.name}`,
+    route: `/${base.name}`,
   }))}
 >
   <ul class="flex flex-col gap-10">
