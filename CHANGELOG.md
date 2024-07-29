@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/nico-i/scheme-viewer/compare/v1.0.0...v1.1.0) (2024-07-29)
+
+
+### Features
+
+* added gh pages config ([d5eb440](https://github.com/nico-i/scheme-viewer/commit/d5eb4405d32134c5cd96e49cd2a8e7c708d76900))
+
 ## 1.0.0 (2024-07-29)
 
 
