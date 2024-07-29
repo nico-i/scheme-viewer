@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/nico-i/scheme-viewer/compare/v1.1.1...v1.1.2) (2024-07-29)
+
+
+### Bug Fixes
+
+* added base routing ([61d9fe9](https://github.com/nico-i/scheme-viewer/commit/61d9fe92eaf63a84980ce740d54934bf9f1917e0))
+
 ## [1.1.1](https://github.com/nico-i/scheme-viewer/compare/v1.1.0...v1.1.1) (2024-07-29)
 
 
