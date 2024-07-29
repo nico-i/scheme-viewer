@@ -1,8 +1,8 @@
 ---
+import Layout from "../components/Layout.astro";
 import SchemeCard from "../components/SchemeCard.astro";
 import { GithubBaseRepo } from "../entities/base/repo/gh/gh-base-repo";
 import { GithubSchemeRepo } from "../entities/scheme/repo/gh/gh-scheme-repo";
-import Layout from "./_Layout.astro";
 
 export async function getStaticPaths() {
   const baseRepo = new GithubBaseRepo(
@@ -31,7 +31,7 @@ const schemes = await schemeRepo.getSchemesByBase(base);
   title={baseName}
   pages={bases.map((base) => ({
     title: `${base.name} schemes`,
-    route: `/${base.name}`,
+    route: `/scheme-viewer/${base.name}`,
   }))}
 >
   <ul class="flex flex-col gap-10">
