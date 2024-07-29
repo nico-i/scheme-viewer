@@ -40,7 +40,6 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check ."
 	},
-	"type": "module",
 	"lint-staged": {
 		"*.{js,ts,jsx,tsx}": [
 			"eslint --fix",
