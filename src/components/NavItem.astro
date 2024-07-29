@@ -1,11 +1,22 @@
 ---
 interface Props {
-	route: string;
+  route: string;
 }
 
 const { route } = Astro.props;
+const activePath = Astro.url.pathname;
+
+const isActive = activePath.includes(route);
 ---
 
-<a href={route}>
-	<slot />
-</a>
+{
+  !isActive ? (
+    <a href={route} class="hover:underline">
+      <slot />
+    </a>
+  ) : (
+    <span class="font-bold underline">
+      <slot />
+    </span>
+  )
+}

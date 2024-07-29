@@ -1,0 +1,14 @@
+---
+interface Props {
+  /**
+   * Hexadecimal color code
+   */
+  color: string;
+  size: number | string;
+}
+
+const { color, size } = Astro.props;
+---
+
+<div style={`background-color: #${color}; width: ${size}; height: ${size};`}>
+</div>

@@ -1,3 +1,6 @@
 {
-	"extends": "@nico-i/eslint-config/basic"
+	"extends": "@nico-i/eslint-config/basic",
+	"parserOptions": {
+		"sourceType": "module"
+	}
 }

@@ -1,0 +1,28 @@
+---
+import { Scheme } from "../entities/scheme/scheme";
+import ColorBox from "./ColorBox.astro";
+import Link from "./Link.astro";
+
+interface Props {
+  scheme: Scheme;
+}
+
+const { scheme } = Astro.props;
+const anchor = scheme.name.replace(/\s/g, "-").toLowerCase();
+---
+
+<div class="flex flex-col gap-2 items-center justify-center" id={anchor}>
+  <h2>
+    <Link href={`#${anchor}`} openInNewTab={false}>#</Link>
+    <Link href={scheme.htmlURL}><b>{scheme.name}</b></Link> – by{" "}{
+      scheme.authorURL ? (
+        <Link href={scheme.authorURL}>{scheme.author}</Link>
+      ) : (
+        scheme.author
+      )
+    }
+  </h2>
+  <div class="flex flex-wrap items-center justify-center gap-1">
+    {scheme.colors.map((color) => <ColorBox color={color} size={"2.5rem"} />)}
+  </div>
+</div>

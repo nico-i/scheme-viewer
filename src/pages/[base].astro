@@ -1,4 +1,5 @@
 ---
+import SchemeCard from "../components/SchemeCard.astro";
 import { GithubBaseRepo } from "../entities/base/repo/gh/gh-base-repo";
 import { GithubSchemeRepo } from "../entities/scheme/repo/gh/gh-scheme-repo";
 import Layout from "./_Layout.astro";
@@ -28,11 +29,18 @@ const schemes = await schemeRepo.getSchemesByBase(base);
 
 <Layout
   title={baseName}
-  pages={bases.map((base) => ({ title: base.name, route: `/${base.name}` }))}
+  pages={bases.map((base) => ({
+    title: `${base.name} schemes`,
+    route: `/${base.name}`,
+  }))}
 >
-  <h1>{baseName} schemes</h1>
-
-  <ul>
-    {schemes.map((scheme) => <li>{scheme.name}</li>)}
+  <ul class="flex flex-col gap-10">
+    {
+      schemes.map((scheme) => (
+        <ul>
+          <SchemeCard scheme={scheme} />
+        </ul>
+      ))
+    }
   </ul>
 </Layout>
