@@ -1,0 +1,18 @@
+---
+import { GithubBaseRepo } from "../entities/base/repo/gh/gh-base-repo";
+
+const bases = await new GithubBaseRepo(
+  import.meta.env.USE_CACHE || false,
+  import.meta.env.UPDATE_CACHE || false
+).getAllBases();
+const mainBasePath = `/${bases[0].name}`;
+---
+
+<html>
+  <head>
+    <meta http-equiv="refresh" content={`0; URL='${mainBasePath}'`} />
+  </head>
+  <body>
+    <p>If you are not redirected, <a href={mainBasePath}>click here</a>.</p>
+  </body>
+</html>

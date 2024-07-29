@@ -1,0 +1,10 @@
+{
+	"extends": "@nico-i/ts-config/basic",
+
+	"compilerOptions": {"moduleResolution": "Node16",
+		"target": "ES2022",
+		"module": "Node16",
+		"resolveJsonModule": true,
+		"esModuleInterop": true
+	}
+}

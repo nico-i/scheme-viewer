@@ -1,0 +1,26 @@
+---
+import NavBar from "../components/NavBar.astro";
+import NavItem from "../components/NavItem.astro";
+
+interface Props {
+  title: string;
+  pages: { title: string; route: string }[];
+}
+
+const { title, pages } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <NavBar>
+      {pages.map((page) => <NavItem route={page.route}>{page.title}</NavItem>)}
+    </NavBar>
+    <slot />
+    <!-- <Footer /> -->
+  </body>
+</html>

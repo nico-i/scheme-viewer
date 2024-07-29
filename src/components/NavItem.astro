@@ -1,0 +1,11 @@
+---
+interface Props {
+	route: string;
+}
+
+const { route } = Astro.props;
+---
+
+<a href={route}>
+	<slot />
+</a>

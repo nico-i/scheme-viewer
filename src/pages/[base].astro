@@ -1,0 +1,38 @@
+---
+import { GithubBaseRepo } from "../entities/base/repo/gh/gh-base-repo";
+import { GithubSchemeRepo } from "../entities/scheme/repo/gh/gh-scheme-repo";
+import Layout from "./_Layout.astro";
+
+export async function getStaticPaths() {
+  const baseRepo = new GithubBaseRepo(
+    import.meta.env.USE_CACHE || false,
+    import.meta.env.UPDATE_CACHE || false
+  );
+  const bases = await baseRepo.getAllBases();
+  const paths = bases.map((base) => ({
+    params: { base: base.name },
+    props: { bases, base },
+  }));
+  return paths;
+}
+
+const { bases, base } = Astro.props;
+const { base: baseName } = Astro.params;
+
+const schemeRepo = new GithubSchemeRepo(
+  import.meta.env.USE_CACHE || false,
+  import.meta.env.UPDATE_CACHE || false
+);
+const schemes = await schemeRepo.getSchemesByBase(base);
+---
+
+<Layout
+  title={baseName}
+  pages={bases.map((base) => ({ title: base.name, route: `/${base.name}` }))}
+>
+  <h1>{baseName} schemes</h1>
+
+  <ul>
+    {schemes.map((scheme) => <li>{scheme.name}</li>)}
+  </ul>
+</Layout>
